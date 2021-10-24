@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.25%;
+}
+
+.game {
+  background-image: url(img/background.webp);
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  position: relative;
+  top: 5rem;
+  margin: 0 auto;
+  width: 70%;
+  height: 50rem;
+  border: 2px solid #000000;
+}
+
+.bird {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(img/Flappy-Bird.png);
+  background-size: cover;
+  width: 3rem;
+  height: 2rem;
+  position: absolute;
+}
+
+.block1 {
+  width: 3rem;
+  height: 30%;
+  position: absolute;
+  clip-path: polygon(12% 0, 88% 0, 87% 91%, 100% 100%, 0 100%, 14% 92%);
+  background-color: rgb(0, 187, 0);
+  left: 100%;
+  animation: move 7s;
+}
+
+.block2 {
+  width: 3rem;
+  height: 50%;
+  clip-path: polygon(0 0, 100% 0, 89% 9%, 91% 100%, 8% 100%, 9% 8%);
+  position: absolute;
+  background-color: rgb(0, 187, 0);
+  left: 100%;
+  top: 50%;
+  animation: move 7s;
+}
+
+@keyframes move {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -30%;
+  }
+}
+
+.score {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 5rem;
+  margin: 0 auto;
+  font-size: 4.5rem;
+  color: #000000;
+}
+
+@media (max-width: 66.875em) {
+  .game {
+    width: 90%;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .game {
+    width: 100%;
+  }
+}
+
+@media (max-height: 31.25em) {
+  .game {
+    width: 90%;
+    height: 25rem;
+    background-size: cover;
+  }
+
+  .bird {
+    width: 2rem;
+    height: 1.5rem;
+  }
+}
